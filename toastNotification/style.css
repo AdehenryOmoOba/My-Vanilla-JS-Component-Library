@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Trebuchet MS',sans-serif;
+}
+main{
+    height: 100%;
+    width: 100%; 
+    background-color: #110f0f;
+    display: grid;
+    place-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+button{
+    background-color: #d5ffd5;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    color: #110f0f;
+    transition: 0.3s;
+    width: max-content;
+}
+button:hover{
+    background-color: #73f273;
+    color: black;
+}
+.toast{
+    position: absolute;
+    display: flex;
+    top: 1rem;
+    right: 1rem;
+    height: 5rem;
+    min-width: 22rem;
+    /* theme color  */
+    background-color: #2c2929;
+    border-radius: 0.5rem;
+    overflow-x: hidden;
+    transform: translateX(calc(100% + 1rem));
+    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+.toast.active{
+    transform: translateX(0%);
+}
+.progress{
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    min-width: 100%;
+    height: 0.2rem;
+    /* theme color  */
+    background-color: #2c2929;
+}
+.progress::after{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0%;
+    min-width: 100%;
+    height: 0.2rem;
+    /* theme color  */
+    background-color: #73f273;
+}
+.progress.active::after{
+    animation: progress 5s linear forwards;  
+}
+@keyframes progress {
+    100%{
+        right: 100%;
+    }
+}
+.status-icon{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 15%;
+    height: 100%;
+    border-radius: 0.5rem 0 0 0.5rem;
+    /* theme color  */
+    border-left: 0.2rem solid #73f273;
+}
+.status-icon .icon{
+    height: 2rem;
+    width: 2rem;
+     /* theme color  */
+    background-color: #73f273;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+.content{
+    min-width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 1rem;
+   
+}
+.content h4{
+    font-weight: bold;
+    margin-bottom: 0.1rem;
+    /* theme color  */
+    color: #73f273;
+}
+.content p{
+    /* theme color  */
+    color: aqua;
+    font-size: 0.8rem;
+}
+.close{
+    min-width: 10%;
+    height: 100%;
+    border-radius: 0 0.5rem 0.5rem 0;
+    position: relative;
+}
+.close-icon-bg{
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: #ffffff;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+}
+.fa-xmark{
+    scale: 0.7;
+    /* theme color  */
+    color: #045004;
+}
+.fa-check{
+    /* theme color  */
+    color: #045004;
+}
