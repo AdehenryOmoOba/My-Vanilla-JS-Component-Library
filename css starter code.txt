@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
+:root{
+    font-size: 62.5%;
+
+    /* Colors  */
+    --bg-color: #10101a;
+    --text-color: #ffffff;
+}
+body{
+    font-size: 1.6rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Scroll Bar  */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #0b0b13;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #ffffcc;
+  border-radius: 3rem;
+}
