@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    font-size: 62.5%;
+
+    /* Colors  */
+    --bg-color: #10101a;
+    --text-color: #ffffff;
+}
+body{
+    font-size: 1.6rem;
+    font-family: Arial,sans-serif;
+}
+
+/* Scroll Bar  */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #0b0b13;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #ffffcc;
+  border-radius: 3rem;
+}
+main{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-content: center;
+}
+.card{
+    position: relative;
+    width: 25rem;
+    height: 30rem;
+    background: linear-gradient(0deg, #1b1b1b,#222222, #1b1b1b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+    /* overflow: hidden; */
+}
+.card:hover{
+    transform: translateY(-1rem);
+    box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.5);
+}
+.percent{
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 5rem #000000;
+    background-color: #222222;
+    z-index: 10;
+}
+.number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.number h2{
+    color: #777777;
+    font-weight: 700;
+    font-size: 4rem;
+    transition: 0.5s;
+}
+.card:hover .number h2{
+    color: #ffffff;
+    font-size: 5rem;
+
+}
+.number h2 span{
+    font-size: 2.4rem;
+}
+
+svg{
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    z-index: 10;
+    transform: rotate(-90deg);
+}
+svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #191919;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(0.5rem, 0.5rem);
+}
+.indicator-circle{
+    stroke-dasharray: 440;
+    stroke: #00ff43;
+}
+.text{
+    position: relative;
+    color: #777777;
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    transition: 0.5s;
+}
+.card:hover .text{
+    color: #ffffff;
+}

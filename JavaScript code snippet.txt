@@ -1,0 +1,44 @@
+const $ = document.querySelector.bind(document)
+let counter = 0
+
+// Throttling 
+
+function throttledCountScrollBar() {
+    let active = true
+  return function()  {
+    if (active){
+        console.log(counter++)
+        active = false
+        setTimeout(() => {
+         active = true
+        }, 500);
+
+    }
+  }
+}
+
+const countScrollBar = throttledCountScrollBar()
+
+window.addEventListener('scroll', countScrollBar)
+
+///////////////////////////////////////////////////////
+
+// Debounce
+
+function debouncedCountScrollBar() {
+    let setTimeoutID;
+
+  return function()  {
+    if (setTimeoutID) {
+        clearTimeout(setTimeoutID)
+    }
+    setTimeoutID =  setTimeout(() => {
+        console.log(counter++)
+      }, 1000);
+     
+  }
+}
+
+const countScrollBar = debouncedCountScrollBar()
+
+window.addEventListener('scroll', countScrollBar)

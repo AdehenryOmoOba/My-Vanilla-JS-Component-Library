@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    font-size: 62.5%;
+
+    /* Colors  */
+    --bg-color: #10101a;
+    --text-color: #ffffff;
+}
+body{
+    font-size: 1.6rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Scroll Bar  */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #0b0b13;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #ffffcc;
+  border-radius: 3rem;
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Segoe UI',sans-serif;
+    background-color: var(--bg-color);
+    display: grid;
+    place-content: center;
+}
+section.accordion{
+    width: 40rem;
+}
+.accordion input{
+    display: none;
+}
+.accordion-item{
+    --hue:205;
+    --title-color: aqua;
+    --icon-color :hsl(var(--hue), 90%, 40%);
+    /* --bg2: #d1d1f8; */
+    --bg2: hsl(var(--hue), 90%, 40%);
+
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.accordion-head{
+    background-color: #1b1b31;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    border: 0.1rem solid transparent;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem hsla(180, 100%, 1%, 0.657);
+}
+.accordion-head:hover{
+    border-color: var(--icon-color);
+}
+.accordion-icon{
+    font-size: 3rem;
+    font-weight: 1.5rem;
+    color: var(--icon-color);
+    margin-right: 2rem;
+}
+.accordion-title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--title-color);
+}
+.accordion-body{
+    height: 0rem;
+    overflow: hidden;
+    transition: all 0.25s ease;
+
+}
+.accordion-text{
+    background-color: var(--bg2);
+    border: 0.1rem solid var(--bg2);
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+    padding: 1.5rem 2rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+.item-two{
+    --hue:260;
+}
+.item-three{
+    --hue:330;
+}
+.item-four{
+    --hue:100;
+}
+:is(#item-one,#item-two, #item-three, #item-four):checked + .accordion-item .accordion-body{
+    height: 12rem;
+}
